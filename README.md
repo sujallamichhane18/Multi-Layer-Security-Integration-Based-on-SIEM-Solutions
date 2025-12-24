@@ -74,7 +74,7 @@ The architecture mirrors real **Security Operations Center (SOC)** environments 
 ---
 
  ### Architecture
- siemprj.drawio.png
+ ![Diagram](siemprj.drawio.png)
 
 
 ## 🧩 Project Workflow
