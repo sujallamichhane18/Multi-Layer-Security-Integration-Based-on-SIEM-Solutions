@@ -73,6 +73,10 @@ The architecture mirrors real **Security Operations Center (SOC)** environments 
 
 ---
 
+ ### Architecture
+ siemprj.drawio.png
+
+
 ## 🧩 Project Workflow
 
 1. Attacks are launched from **Kali Linux**
