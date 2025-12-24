@@ -6,9 +6,9 @@
 
 ## 📌 Project Overview
 
-This project implements a **multi-layer, defense-in-depth security architecture** using open-source security tools integrated into a centralized **SIEM-driven SOC framework**. The objective is to simulate real-world cyberattacks, detect them in real time, and analyze incidents across network and host layers.
+This project implements a **multi-layer, defense-in-depth security architecture** using open-source security tools integrated into a centralized **SIEM-driven SOC framework**. The goal is to simulate real-world attacks, detect threats in real time, correlate security events, and alert administrators promptly.
 
-The setup reflects how modern **Security Operations Centers (SOC)** operate, with emphasis on **visibility, correlation, and incident response**.
+The architecture mirrors real **Security Operations Center (SOC)** environments with emphasis on **detection, visibility, and response**.
 
 ---
 
@@ -16,9 +16,10 @@ The setup reflects how modern **Security Operations Centers (SOC)** operate, wit
 
 * Simulate realistic cyberattack scenarios
 * Detect malicious activity in real time
-* Correlate logs from multiple security layers
-* Analyze incidents using SIEM dashboards
-* Demonstrate SOC workflows suitable for SMEs and learners
+* Correlate logs across network and host layers
+* Perform host-based intrusion detection (HIDS)
+* Send automated email alerts to administrators
+* Enhance malware detection using threat intelligence
 
 ---
 
@@ -35,56 +36,72 @@ The setup reflects how modern **Security Operations Centers (SOC)** operate, wit
 
 * Deep Packet Inspection (DPI)
 * Signature-based and anomaly-based detection
-* Detects network-level threats (scanning, exploitation, C2 traffic)
-* Forwards alerts to the SIEM
+* Detection of scans, exploits, and suspicious traffic
+* Alerts forwarded to SIEM
 
 ### 📊 Wazuh (SIEM / HIDS)
 
-* Centralized log collection
-* Log correlation and rule-based detection
-* Real-time alerting and visualization
-* Host-based intrusion detection (HIDS)
-* Incident investigation and analysis
+* Centralized log collection and correlation
+* Rule-based and behavior-based detection
+* Host-based intrusion detection (file integrity, rootkits, log analysis)
+* Real-time alerts and dashboards
+* Integration with external threat intelligence
+
+### 📧 Postfix (Email Alerting Server)
+
+* Configured SMTP server for alert delivery
+* Sends real-time security alerts to administrators
+* Enables rapid awareness and response
+* Integrated with Wazuh alerting mechanisms
 
 ### 🧪 Kali Linux (Attack Simulation)
 
 * Red-team testing platform
-* Simulates attacks such as:
+* Simulates:
 
   * Network scanning
-  * Brute-force attempts
-  * Exploitation testing
-  * Credential attacks
+  * Brute-force attacks
+  * Exploitation attempts
+  * Credential-based attacks
+
+### 🧬 VirusTotal Integration (HIDS Enhancement)
+
+* Integrated with Wazuh HIDS
+* Suspicious files and hashes are checked against VirusTotal
+* Improves malware detection accuracy
+* Adds threat intelligence context to alerts
 
 ---
 
 ## 🧩 Project Workflow
 
-1. Attacks are generated from **Kali Linux**
-2. Traffic passes through **pfSense** firewall
-3. **Suricata** inspects and flags malicious patterns
-4. Logs and alerts are sent to **Wazuh SIEM**
-5. Security events are correlated and analyzed
-6. Incidents are reviewed via SIEM dashboards
+1. Attacks are launched from **Kali Linux**
+2. Traffic passes through **pfSense**
+3. **Suricata** inspects network traffic
+4. Hosts generate logs and file integrity events
+5. **Wazuh SIEM** correlates all security events
+6. File hashes are validated using **VirusTotal**
+7. Critical alerts are sent via **Postfix email server**
+8. Administrator analyzes incidents using SIEM dashboards
 
 ---
 
 ## 🧠 Key Learning Outcomes
 
-* Hands-on SOC operations experience
-* SIEM integration and log correlation
-* Network and host-based detection techniques
-* Blue-team monitoring and analysis
-* Incident response fundamentals
+* Practical SOC operations and workflows
+* SIEM integration and multi-source log correlation
+* Network-based and host-based detection
+* Malware validation using threat intelligence
+* Automated alerting and incident awareness
 
 ---
 
 ## 🏢 Use Cases
 
 * Academic cybersecurity laboratories
-* SOC analyst training environments
-* SME-level security monitoring prototypes
-* Defensive security research
+* SOC analyst training and simulation
+* SME-level security monitoring solutions
+* Defensive security research and blue-team practice
 
 ---
 
@@ -93,6 +110,8 @@ The setup reflects how modern **Security Operations Centers (SOC)** operate, wit
 * pfSense
 * Suricata
 * Wazuh
+* Postfix
+* VirusTotal API
 * Kali Linux
 * VirtualBox / VMware
 
@@ -101,13 +120,15 @@ The setup reflects how modern **Security Operations Centers (SOC)** operate, wit
 ## 👥 Team Members
 
 * **Sujal Lamichhane**
-* [Add other team members]
+* **Ujjwal Kandel**
+* **Nirmal Adhikari**
 
 ---
 
 ## 📌 Disclaimer
 
-This project is intended **solely for educational and research purposes**. All testing is performed in an isolated lab environment. Unauthorized testing against live systems is illegal.
+This project is intended **strictly for educational and research purposes**. All testing is performed in an isolated lab environment. Unauthorized testing on live systems is illegal.
 
 ---
+
 
