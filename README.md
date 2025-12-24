@@ -123,6 +123,10 @@ The architecture mirrors real **Security Operations Center (SOC)** environments 
 * **Ujjwal Kandel**
 * **Nirmal Adhikari**
 
+## Supervisor
+* **Anuj Khanal**
+* **+977-9865206191**
+
 ---
 
 ## 📌 Disclaimer
